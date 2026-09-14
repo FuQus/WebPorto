@@ -158,8 +158,27 @@
   }
   nav.links a:hover{ color: var(--bg); background: var(--accent-bright); }
 
+  @media (max-width: 700px){
+    .nav-inner{ padding: 0 16px; gap: 10px; }
+    .mark{ font-size: 14px; flex-shrink: 0; }
+    nav.links{
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      min-width: 0;
+    }
+    nav.links::-webkit-scrollbar{ display: none; }
+    nav.links a{ padding: 7px 11px; flex-shrink: 0; font-size: 11px; }
+  }
+
   /* ---------- HERO ---------- */
   .hero{ padding: 176px 0 100px; position: relative; }
+  @media (max-width: 700px){
+    .hero{ padding: 130px 0 70px; }
+  }
+  @media (max-width: 400px){
+    .hero h1{ font-size: 2.3rem; }
+  }
   .hero-eyebrow{
     font-family: var(--mono);
     font-size: 12px;
@@ -535,6 +554,19 @@
 
   .reveal{ opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.is-visible{ opacity: 1; transform: translateY(0); }
+
+  /* ---------- MOBILE-ONLY ADJUSTMENTS (does not affect desktop/laptop) ---------- */
+  @media (max-width: 700px){
+    .wrap{ padding: 0 20px; }
+    .sheet{ padding: 64px 0; }
+    .spec-sheet-head{ padding: 24px 20px 20px; }
+    .spec-sheet-body{ padding: 24px 20px; gap: 28px; }
+    .title-block{ padding: 16px 20px; }
+    .proof-row{ padding: 20px; gap: 16px; }
+    .other-card{ padding: 24px 20px; }
+    .contact-list li{ flex-direction: column; align-items: flex-start; gap: 4px; }
+    footer{ padding: 20px 0; }
+  }
 </style>
 </head>
 <body>
@@ -621,7 +653,7 @@
             simbatra.my.id
           </a>
         </div>
-        <div class="stamp">Selesai</div>
+        <div class="stamp">Sudah Selesai</div>
       </div>
       <div class="spec-sheet-body">
         <div>
@@ -712,6 +744,7 @@
     <div class="ref-tag"><span class="moon"></span>Sertifikasi</div>
     <div class="section-head">
       <h2>Pelatihan &amp; Sertifikasi</h2>
+      <p>Bukti pembelajaran formal</p>
     </div>
     <div class="other-grid">
       <div class="other-card">
@@ -812,6 +845,7 @@
     <div class="ref-tag"><span class="moon"></span>Keahlian</div>
     <div class="section-head">
       <h2>Kemampuan teknis</h2>
+      <p>Dikelompokkan seperti panel instrumen</p>
     </div>
     <div class="skills-grid">
       <div class="skills-col">
@@ -854,6 +888,7 @@
     <div class="contact-grid">
       <div>
         <h2>Mari berdiskusi soal proyek atau peluang kerja.</h2>
+        <p class="contact-note" style="margin-top:20px;">Balas paling cepat lewat email. Cocok untuk diskusi proyek magang, kolaborasi, atau sekadar bertukar catatan teknis.</p>
       </div>
       <ul class="contact-list">
         <li><span>Email</span><a href="mailto:Mubdilazuard1105@gmail.com">Mubdilazuard1105@gmail.com</a></li>
