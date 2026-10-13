@@ -483,6 +483,59 @@
     letter-spacing: 0.06em;
   }
 
+  /* ---------- EXPERIENCE (timeline style, different from project cards) ---------- */
+  .exp{ display: grid; grid-template-columns: 220px 1fr; gap: 56px; align-items: start; }
+  .exp-year{
+    font-family: var(--display);
+    font-size: clamp(3.4rem, 7vw, 5.2rem);
+    line-height: 0.9;
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--accent-bright);
+    transform: skewX(-4deg);
+    transform-origin: left;
+    filter: drop-shadow(0 0 10px rgba(95,212,255,0.35));
+  }
+  .exp-range{ font-family: var(--mono); font-size: 12px; color: var(--ink-soft); margin-top: 18px; letter-spacing: 0.04em; }
+  .exp-loc{ font-family: var(--mono); font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; }
+  .exp-status{
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 11px; color: var(--accent-bright);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-top: 18px;
+  }
+  .exp-status::before{
+    content: ""; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent-bright); box-shadow: 0 0 8px rgba(95,212,255,0.9);
+  }
+
+  .exp-body{ position: relative; padding: 0 0 8px 40px; }
+  .exp-body::before{
+    content: ""; position: absolute; left: 0; top: 6px; bottom: 0; width: 2px;
+    background: linear-gradient(to bottom, var(--accent-bright), var(--accent) 45%, transparent);
+  }
+  .exp-body::after{
+    content: ""; position: absolute; left: -7px; top: 6px; width: 16px; height: 16px;
+    border-radius: 50%; background: var(--bg); border: 2px solid var(--accent-bright);
+    box-shadow: 0 0 0 4px var(--bg), 0 0 14px rgba(95,212,255,0.7);
+  }
+  .exp-body h3{ font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-style: italic; transform: skewX(-3deg); transform-origin: left; }
+  .exp-org{ font-family: var(--mono); font-size: 12px; color: var(--accent-bright); margin-top: 10px; line-height: 1.7; }
+  .exp-desc{ color: var(--ink-soft); margin: 22px 0 8px; max-width: 60ch; }
+  .exp-steps{ list-style: none; margin: 0; padding: 0; }
+  .exp-steps li{ position: relative; padding: 9px 0 9px 24px; font-size: 14px; color: var(--ink); }
+  .exp-steps li::before{
+    content: "\203A"; position: absolute; left: 0; top: 7px;
+    font-family: var(--mono); font-size: 18px; line-height: 1.2; color: var(--accent-bright);
+  }
+  .exp-foot{ display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 22px; }
+  .exp-foot .tag-row{ margin-top: 0; }
+  .exp-foot .live-link{ margin-top: 0; }
+
+  @media (max-width: 760px){
+    .exp{ grid-template-columns: 1fr; gap: 28px; }
+    .exp-body{ padding-left: 28px; }
+  }
+
   /* ---------- OTHER PROJECTS / SERTIFIKASI ---------- */
   .other-grid{
     display: flex;
@@ -578,6 +631,7 @@
     <a href="#top" class="mark"><span class="moon-icon"></span>FuQu</a>
     <nav class="links">
       <a href="#tentang">Tentang</a>
+      <a href="#pengalaman">Pengalaman</a>
       <a href="#proyek">Proyek</a>
       <a href="#sertifikasi">Sertifikasi</a>
       <a href="#keahlian">Keahlian</a>
@@ -624,15 +678,53 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>Lulusan baru dari Program Studi D3 Teknik Informatika, Politeknik Negeri Banjarmasin dengan minat kuat dalam pengembangan web, terutama di bagian pengembangan antarmuka pengguna dan pengembangan sisi server. Memiliki pengalaman kerja sebagai Web Developer Intern di Balai Teknik Rawa Kota Banjarmasin. Melalui keterlibatan dalam berbagai proyek perkuliahan berbasis Project Based Learning maupun pembuatan sistem pada proyek magang, mampu bekerja sama dan beradaptasi dalam berbagai tim IT serta terlatih dalam mengatur prioritas kerja dan memastikan penyelesaian target secara optimal.</p>
-        <p>Saya tertarik pada bagian sistem yang sering luput dari perhatian — migrasi data, penataan status, dan detail deployment yang menentukan apakah sebuah aplikasi benar-benar bisa dipakai di dunia nyata, bukan hanya di lingkungan pengembangan.</p>
+        <p>Lulusan baru dari Program Studi D3 Teknik Informatika, Politeknik Negeri Banjarmasin dengan minat kuat dalam pengembangan web, terutama di bagian pengembangan antarmuka pengguna dan pengembangan sisi server.</p>
+        <p>Tertarik dalam pengembangan aplikasi web, mulai dari perancangan antarmuka yang responsif pada frontend, pengembangan logika dan fungsionalitas sistem pada backend, hingga pengelolaan database yang terstruktur dan efisien.</p>
       </div>
       <dl class="spec-list">
-        <div><dt>Pendidikan</dt><dd>Diploma III — Program Studi Teknik Informatika</dd></div>
+        <div><dt>Pendidikan Terakhir</dt><dd>Diploma III — Program Studi Teknik Informatika</dd></div>
         <div><dt>Fokus</dt><dd>Pengembangan Web, terutama Frontend &amp; Backend Development</dd></div>
         <div><dt>Alat Utama</dt><dd>Laravel, MySQL, Visual Studio Code, PHP, HTML, CSS, JavaScript</dd></div>
         <div><dt>Sedang Dikerjakan</dt><dd>—</dd></div>
       </dl>
+    </div>
+  </section>
+
+  <!-- PENGALAMAN MAGANG -->
+  <section class="sheet reveal" id="pengalaman">
+    <div class="ref-tag"><span class="moon"></span>Pengalaman</div>
+    <div class="section-head">
+      <h2>Pengalaman Magang</h2>
+    </div>
+
+    <div class="exp">
+      <div class="exp-meta">
+        <div class="exp-year">2025</div>
+        <div class="exp-range">1 Sep &ndash; 31 Des 2025</div>
+        <div class="exp-loc">Banjarmasin</div>
+        <div class="exp-status">Selesai</div>
+      </div>
+      <div class="exp-body">
+        <h3>Web Developer Intern</h3>
+        <div class="exp-org">Balai Teknik Rawa<br>Direktorat Bina Teknik Sumber Daya Air, Kementerian Pekerjaan Umum</div>
+        <p class="exp-desc">Menjalani magang dengan fokus pada pengembangan web sesuai kebutuhan instansi.</p>
+        <ul class="exp-steps">
+          <li>Merancang alur kerja sistem berdasarkan analisis kebutuhan pengguna serta umpan balik dari stakeholder</li>
+          <li>Mengembangkan sistem menggunakan PHP dengan framework Laravel dan MySQL sebagai basis data</li>
+          <li>Merancang dan mengimplementasikan database terintegrasi untuk mendukung pengelolaan data</li>
+        </ul>
+        <div class="exp-foot">
+          <div class="tag-row">
+            <span class="tag">Laravel</span>
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+          </div>
+          <a href="assets/certs/Sertifikat Magang.pdf#toolbar=0&navpanes=0&view=Fit" target="_blank" rel="noopener" class="live-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M14 3h7v7M21 3l-9 9M12 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Lihat Sertifikat Magang
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -696,8 +788,14 @@
     <div class="spec-sheet">
       <div class="spec-sheet-head">
         <div>
-          <h3>Simpadu</h3>
+          <h3>Sistem Informasi Terpadu (Simpadu)</h3>
           <div class="spec-sheet-sub">Project Based Learning — Database Developer</div>
+          <div class="cert-links">
+            <a href="assets/certs/Pbl.pdf#toolbar=0&navpanes=0&view=Fit" target="_blank" rel="noopener" class="live-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M14 3h7v7M21 3l-9 9M12 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Lihat PDF
+            </a>
+          </div>
         </div>
         <div class="stamp">Selesai</div>
       </div>
@@ -707,7 +805,7 @@
           <div class="tag-row">
             <span class="tag">SQL</span>
             <span class="tag">Perancangan ERD</span>
-            <span class="tag">Normalisasi Database</span>
+            <span class="tag">Database</span>
           </div>
         </div>
         <ul class="feature-list">
@@ -808,6 +906,17 @@
         <p>Mengikuti Pelatihan Dasar Keselamatan dan Kesehatan Kerja serta Analisis Keselamatan Kerja, diselenggarakan Career Development Center Politeknik Negeri Banjarmasin, November 2023.</p>
         <div class="cert-links">
           <a href="assets/certs/K3.pdf#toolbar=0&navpanes=0&view=Fit" target="_blank" rel="noopener" class="live-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M14 3h7v7M21 3l-9 9M12 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Lihat PDF
+          </a>
+        </div>
+      </div>
+      <div class="other-card">
+        <div class="ref-tag">Sertifikasi LSP</div>
+        <h3>Pemrogram (Programmer)</h3>
+        <p>Dinyatakan kompeten pada Uji Kompetensi Skema Pemrogram (Programmer) di LSP Politeknik Negeri Banjarmasin, 24 Juni 2026. Surat keterangan ini menjadi pengganti sementara sertifikat BNSP yang masih dalam proses.</p>
+        <div class="cert-links">
+          <a href="assets/certs/LSP.pdf#toolbar=0&navpanes=0&view=Fit" target="_blank" rel="noopener" class="live-link">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M14 3h7v7M21 3l-9 9M12 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Lihat PDF
           </a>
