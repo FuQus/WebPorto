@@ -483,6 +483,11 @@
     letter-spacing: 0.06em;
   }
 
+  /* satu gambar bukti: tampil utuh, tidak dipotong */
+  .proof-row.proof-single{ grid-template-columns: 1fr; }
+  .proof-row.proof-single .proof-item{ max-width: 760px; }
+  .proof-row.proof-single .proof-item img{ height: auto; max-height: 520px; object-fit: contain; background: var(--bg); }
+
   /* ---------- EXPERIENCE (timeline style, different from project cards) ---------- */
   .exp{ display: grid; grid-template-columns: 220px 1fr; gap: 56px; align-items: start; }
   .exp-year{
@@ -770,6 +775,14 @@
           <li>Generator kwitansi PDF dengan cap "LUNAS" otomatis pada dokumen yang sudah diverifikasi</li>
         </ul>
       </div>
+      <div class="proof-row proof-single">
+        <div class="proof-item">
+          <a href="assets/images/Simbatra.png" target="_blank" rel="noopener">
+            <img src="assets/images/Simbatra.png" alt="Tampilan aplikasi Simbatra">
+          </a>
+          <span class="proof-caption">Tampilan Aplikasi Simbatra</span>
+        </div>
+      </div>
       <div class="title-block">
         <span>Peran — Frontend Developer &amp; Backend Developer (Proyek Kelompok)</span>
         <span>Jenis — Tugas Akhir D3</span>
@@ -912,9 +925,9 @@
         </div>
       </div>
       <div class="other-card">
-        <div class="ref-tag">Sertifikasi LSP</div>
+        <div class="ref-tag">Sertifikasi BNSP</div>
         <h3>Pemrogram (Programmer)</h3>
-        <p>Dinyatakan kompeten pada Uji Kompetensi Skema Pemrogram (Programmer) di LSP Politeknik Negeri Banjarmasin, 24 Juni 2026. Surat keterangan ini menjadi pengganti sementara sertifikat BNSP yang masih dalam proses.</p>
+        <p>Sertifikat Kompetensi bidang Pengembangan Perangkat Lunak dengan kualifikasi Pemrogram (Programmer) dari Badan Nasional Sertifikasi Profesi (BNSP), diterbitkan melalui LSP Politeknik Negeri Banjarmasin pada 26 Juni 2026 dan dilengkapi daftar unit kompetensi. Berlaku 3 tahun.</p>
         <div class="cert-links">
           <a href="assets/certs/Lsp.pdf#toolbar=0&navpanes=0&view=Fit" target="_blank" rel="noopener" class="live-link">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M14 3h7v7M21 3l-9 9M12 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
